@@ -4,18 +4,43 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
+
+    if(startTowerIdx === endTowerIdx) return false
+
+    if(this.towers[startTowerIdx] === undefined || this.towers[endTowerIdx] === undefined) return false
+
+    if(this.towers[startTowerIdx].length === 0) return false
+
     if (this.towers[endTowerIdx].length === 0) {
       return true
     }
+
 
     let startArray = this.towers[startTowerIdx]
     let endArray = this.towers[endTowerIdx]
     if (startArray[startArray.length-1] < endArray[endArray.length - 1]) {
       return true
+    }else{
+      return false
     }
   }
 
-  move(startTowerIdx, endTowerIdx) {}
+  move(startTowerIdx, endTowerIdx) {
+    if(this.isValidMove(startTowerIdx, endTowerIdx) ===false) return
+
+    let startArray = this.towers[startTowerIdx]
+    let endArray = this.towers[endTowerIdx]
+
+    let disk= startArray.pop()
+    endArray.push(disk)
+
+    return true
+
+  }
+
+
+
+
 
   isWon() {}
 
