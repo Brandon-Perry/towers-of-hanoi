@@ -26,6 +26,9 @@ describe("HanoiGame", () => {
 
     context("initialized without an argument", () => {
       it("should set the towers property to a default game with the three disks in the first tower", () => {
+        
+        
+        
         expect(game.towers).to.eql([[3, 2, 1], [], []]);
       });
     });
