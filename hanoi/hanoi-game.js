@@ -26,7 +26,7 @@ class HanoiGame {
   }
 
   move(startTowerIdx, endTowerIdx) {
-    if(this.isValidMove(startTowerIdx, endTowerIdx) ===false) return
+    if(this.isValidMove(startTowerIdx, endTowerIdx) ===false) return false
 
     let startArray = this.towers[startTowerIdx]
     let endArray = this.towers[endTowerIdx]
@@ -42,7 +42,15 @@ class HanoiGame {
 
 
 
-  isWon() {}
+  isWon() {
+    if (this.towers[1].length === 3) {
+      return true
+    }
+    if (this.towers[2].length === 3) {
+      return true
+    }
+    return false
+  }
 
   // the below methods are complete and do not need to be modified
   print() {
